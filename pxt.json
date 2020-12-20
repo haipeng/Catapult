@@ -1,0 +1,32 @@
+{
+    "name": "投石车蓝牙APP遥控",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "SuperBit": "github:lzty634158/superbit#6269833569d95474e1a73879812434e0c1b45cdc",
+        "bluetooth": "*",
+        "microphone": "*"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj",
+    "yotta": {
+        "config": {
+            "microbit-dal": {
+                "bluetooth": {
+                    "open": 1,
+                    "whitelist": 0
+                }
+            }
+        }
+    }
+}
