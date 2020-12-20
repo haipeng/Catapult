@@ -23,8 +23,8 @@ function BreathLED () {
         SuperBit.RGB_Program().showColor(neopixel.colors(NeoPixelColors.Red))
         SuperBit.RGB_Program().show()
     }
-    for (let k = 0; k <= 255; k++) {
-        SuperBit.RGB_Program().setBrightness(255 - k)
+    for (let l = 0; l <= 255; l++) {
+        SuperBit.RGB_Program().setBrightness(255 - l)
         SuperBit.RGB_Program().showColor(neopixel.colors(NeoPixelColors.Red))
         SuperBit.RGB_Program().show()
     }
@@ -92,39 +92,6 @@ function HorseLED () {
     SuperBit.RGB_Program().clear()
     SuperBit.RGB_Program().show()
 }
-function music2 () {
-    if (uartData == "1") {
-        music.ringTone(262)
-        SuperBit.Servo2(SuperBit.enServo.S1, 135)
-    } else if (uartData == "2") {
-        music.ringTone(294)
-        SuperBit.Servo2(SuperBit.enServo.S1, 105)
-    } else if (uartData == "3") {
-        music.ringTone(330)
-    } else if (uartData == "4") {
-        music.ringTone(349)
-    } else if (uartData == "5") {
-        music.ringTone(392)
-    } else if (uartData == "6") {
-        music.ringTone(440)
-    } else if (uartData == "7") {
-        music.ringTone(494)
-    } else if (uartData == "8") {
-        music.ringTone(523)
-    } else if (uartData == "B1") {
-        music.ringTone(554)
-    } else if (uartData == "B2") {
-        music.ringTone(622)
-    } else if (uartData == "B3") {
-        music.ringTone(740)
-    } else if (uartData == "B4") {
-        music.ringTone(831)
-    } else if (uartData == "B5") {
-        music.ringTone(932)
-    } else if (uartData == "O") {
-        pins.digitalWritePin(DigitalPin.P0, 0)
-    }
-}
 function WaterLED () {
     SuperBit.RGB_Program().setBrightness(255)
     SuperBit.RGB_Program().setPixelColor(0, neopixel.colors(NeoPixelColors.Violet))
@@ -182,6 +149,63 @@ function SevenWaterLED () {
         g_RGBMode = 5
     }
 }
+function music2 () {
+    if (uartData == "1") {
+        SuperBit.Servo2(SuperBit.enServo.S1, 135)
+        music.playTone(262, music.beat(BeatFraction.Whole))
+        SuperBit.Servo2(SuperBit.enServo.S1, 105)
+    } else if (uartData == "2") {
+        SuperBit.Servo2(SuperBit.enServo.S1, 135)
+        music.playTone(294, music.beat(BeatFraction.Whole))
+        SuperBit.Servo2(SuperBit.enServo.S1, 105)
+    } else if (uartData == "3") {
+        SuperBit.Servo2(SuperBit.enServo.S1, 135)
+        music.playTone(330, music.beat(BeatFraction.Whole))
+        SuperBit.Servo2(SuperBit.enServo.S1, 105)
+    } else if (uartData == "4") {
+        SuperBit.Servo2(SuperBit.enServo.S1, 135)
+        music.playTone(349, music.beat(BeatFraction.Whole))
+        SuperBit.Servo2(SuperBit.enServo.S1, 105)
+    } else if (uartData == "5") {
+        SuperBit.Servo2(SuperBit.enServo.S1, 135)
+        music.playTone(392, music.beat(BeatFraction.Whole))
+        SuperBit.Servo2(SuperBit.enServo.S1, 105)
+    } else if (uartData == "6") {
+        SuperBit.Servo2(SuperBit.enServo.S1, 135)
+        music.playTone(440, music.beat(BeatFraction.Whole))
+        SuperBit.Servo2(SuperBit.enServo.S1, 105)
+    } else if (uartData == "7") {
+        SuperBit.Servo2(SuperBit.enServo.S1, 135)
+        music.playTone(494, music.beat(BeatFraction.Whole))
+        SuperBit.Servo2(SuperBit.enServo.S1, 105)
+    } else if (uartData == "8") {
+        SuperBit.Servo2(SuperBit.enServo.S1, 135)
+        music.playTone(523, music.beat(BeatFraction.Whole))
+        SuperBit.Servo2(SuperBit.enServo.S1, 105)
+    } else if (uartData == "B1") {
+        SuperBit.Servo2(SuperBit.enServo.S1, 135)
+        music.playTone(554, music.beat(BeatFraction.Whole))
+        SuperBit.Servo2(SuperBit.enServo.S1, 105)
+    } else if (uartData == "B2") {
+        SuperBit.Servo2(SuperBit.enServo.S1, 135)
+        music.playTone(622, music.beat(BeatFraction.Whole))
+        SuperBit.Servo2(SuperBit.enServo.S1, 105)
+    } else if (uartData == "B3") {
+        SuperBit.Servo2(SuperBit.enServo.S1, 135)
+        music.playTone(740, music.beat(BeatFraction.Whole))
+        SuperBit.Servo2(SuperBit.enServo.S1, 105)
+    } else if (uartData == "B4") {
+        SuperBit.Servo2(SuperBit.enServo.S1, 135)
+        music.playTone(831, music.beat(BeatFraction.Whole))
+        SuperBit.Servo2(SuperBit.enServo.S1, 105)
+    } else if (uartData == "B5") {
+        SuperBit.Servo2(SuperBit.enServo.S1, 135)
+        music.playTone(932, music.beat(BeatFraction.Whole))
+        SuperBit.Servo2(SuperBit.enServo.S1, 105)
+    } else if (uartData == "O") {
+        pins.digitalWritePin(DigitalPin.P0, 0)
+    }
+}
 let gBlue = 0
 let g_Green = 0
 let g_Red = 0
@@ -189,8 +213,8 @@ let g_mode = 0
 let uartData = ""
 let connected = 0
 let g_RGBMode = 0
+let m = 0
 let i = 0
-let k = 0
 g_RGBMode = 0
 connected = 0
 SuperBit.Servo2(SuperBit.enServo.S1, 105)

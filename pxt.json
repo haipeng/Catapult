@@ -5,7 +5,8 @@
         "core": "*",
         "SuperBit": "github:lzty634158/superbit#6269833569d95474e1a73879812434e0c1b45cdc",
         "bluetooth": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "devices": "*"
     },
     "files": [
         "main.blocks",
@@ -18,7 +19,7 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "tsprj",
+    "preferredEditor": "blocksprj",
     "yotta": {
         "config": {
             "microbit-dal": {
